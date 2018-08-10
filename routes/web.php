@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user/blog');
 });
+
+Route::get('/resume', function () {
+    return view('user/resume');
+})->name('resume');
+
+Route::get('/post', function () {
+    return view('user/post');
+})->name('post');
