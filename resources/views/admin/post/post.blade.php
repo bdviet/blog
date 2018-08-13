@@ -1,0 +1,119 @@
+@extends('admin.layouts.app')
+
+@section('main-content')
+
+<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<h1>
+			Text Editors
+			<small>Advanced form element</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+			<li><a href="#">Forms</a></li>
+			<li class="active">Editors</li>
+		</ol>
+	</section>
+	<!-- Main content -->
+	<section class="content">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box box-primary">
+					<div class="box-header with-border">
+						<h3 class="box-title">Titles</h3>
+					</div>
+					<!-- /.box-header -->
+					<!-- form start -->
+					<form role="form">
+						<div class="box-body">
+							<div class="col-lg-6">
+								<div class="form-group">
+									<label for="title">Post title</label>
+									<input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
+								</div>
+
+								<div class="form-group">
+									<label for="subtitle">Post Sub Title</label>
+									<input type="text" class="form-control" id="subtitle" name="subtitle" placeholder="Enter subtitle">
+								</div>
+
+								<div class="form-group">
+									<label for="slug">Post Slug</label>
+									<input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="form-group">
+									<label for="image">Image</label>
+									<input type="file" name="image" id="image">
+								</div>
+								<br>
+							</br>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="status"> Publish
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- /.box-body -->
+					<div class="box">
+						<div class="box-header">
+							<h3 class="box-title">Write post body here
+								<small>Simple and fast</small>
+							</h3>
+							<!-- tools box -->
+							<div class="pull-right box-tools">
+								<button type="button" class="btn btn-default btn-sm" data-widget="collapse" data-toggle="tooltip"
+								title="Collapse">
+								<i class="fa fa-minus"></i></button>
+							</div>
+							<!-- /. tools -->
+						</div>
+						<!-- /.box-header -->
+						<div class="box-body pad">
+							<form>
+								<textarea class="textarea" id="editor1" name="editor1" name="body" placeholder="Place some text here"
+								style="width: 100%; height: 500px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+							</form>
+						</div>
+					</div>
+					<div class="box-footer">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+			</div>				
+		</div>
+		<!-- /.col-->
+	</div>
+	<!-- ./row -->
+</section>
+<!-- /.content -->
+</div>
+
+<!-- jQuery 3 -->
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- CK Editor -->
+<script src="../../bower_components/ckeditor/ckeditor.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script>
+	$(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor1')
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+})
+</script>
+
+@endsection

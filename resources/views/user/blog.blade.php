@@ -27,7 +27,7 @@
       </div>
       <hr>
       <div class="post-preview">
-        <a href="post.html">
+        <a href="{{ route('post') }}">
           <h2 class="post-title">
             I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
           </h2>
@@ -38,7 +38,7 @@
       </div>
       <hr>
       <div class="post-preview">
-        <a href="post.html">
+        <a href="{{ route('post') }}">
           <h2 class="post-title">
             Science has not yet mastered prophecy
           </h2>
@@ -52,7 +52,7 @@
       </div>
       <hr>
       <div class="post-preview">
-        <a href="post.html">
+        <a href="{{ route('post') }}">
           <h2 class="post-title">
             Failure is not an option
           </h2>
