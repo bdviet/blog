@@ -28,21 +28,24 @@
 					</div>
 					<!-- /.box-header -->
 					<!-- form start -->
-					<form role="form">
+					@include('included.error')
+					<form role="form" action="{{ route('tag.store') }}" method="post">
+						{{ csrf_field() }}
 						<div class="box-body">
-							<div class="col-lg-offset-3 col-lg-6">
+							<div class="col-lg-offset-2 col-lg-6">
 								<div class="form-group">
 									<label for="name">Tag title</label>
 									<input type="text" class="form-control" id="name" name="name" placeholder="Tag Title">
 								</div>
 
 								<div class="form-group">
-									<label for="slug">Post slug</label>
+									<label for="slug">Tag slug</label>
 									<input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
 								</div>
 
 								<div class="form-group">
-									<button type="submit" class="btn btn-primary">Submit</button>
+									<a class="btn btn-primary">{{ __('texts.submit') }}</a>
+									<a href="{{ route('tag.index') }}" class="btn btn-danger">{{ __('texts.back') }}</a>
 								</div>
 							</div>
 						</div>
@@ -69,15 +72,4 @@
 <script src="../../bower_components/ckeditor/ckeditor.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<script>
-	$(function () {
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace('editor1')
-    //bootstrap WYSIHTML5 - text editor
-    $('.textarea').wysihtml5()
-})
-</script>
-
-
 @endsection

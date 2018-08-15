@@ -1,29 +1,28 @@
 <?php
 
-Route::get('/', function () {
-    return view('user.blog');
-})->name('home');
-
-Route::get('resume', function () {
-    return view('user.resume');
-})->name('resume');
-
-Route::get('post', function () {
-    return view('user.post');
-})->name('post');
-
-Route::get('admin/home', function () {
-    return view('admin.home');
-})->name('admin');
-
-Route::get('admin/post', function () {
-    return view('admin.post.post');
+//route user
+Route::group(['namespace' => 'User'], function() {
+	Route::get('post', 'PostController@index')->name('post');
+	Route::get('resume', 'ResumeController@index')->name('resume');
+	Route::get('/', 'HomeController@index')->name('home');
 });
 
-Route::get('admin/tag', function () {
-    return view('admin.tag.tag');
-});
 
-Route::get('admin/category', function () {
-    return view('admin.category.category');
+//route admin
+Route::group(['namespace' => 'Admin'], function() {
+
+    // admin.home Controller
+	Route::get('admin/home', 'HomeController@index')-> name('admin.home');
+
+    // Post Route
+	Route::resource('admin/post', 'PostController');
+
+    // Tag Route
+	Route::resource('admin/tag', 'TagController');
+
+    // Category Route
+	Route::resource('admin/category', 'CategoryController');
+
+	// User Route
+	Route::resource('admin/user', 'UserController');
 });

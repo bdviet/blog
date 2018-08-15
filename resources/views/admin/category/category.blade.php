@@ -28,9 +28,11 @@
 					</div>
 					<!-- /.box-header -->
 					<!-- form start -->
-					<form role="form">
+					@include('included.error')
+					<form role="form" action="{{ route('category.store') }}" method="post">
+						{{ csrf_field() }}
 						<div class="box-body">
-							<div class="col-lg-offset-3 col-lg-6">
+							<div class="col-lg-offset-2 col-lg-6">
 								<div class="form-group">
 									<label for="name">Category title</label>
 									<input type="text" class="form-control" id="name" name="name" placeholder="Category Title">
@@ -41,8 +43,9 @@
 									<input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
 								</div>
 
-								<div class="form-group">
+								<div class="form-group text-center">
 									<button type="submit" class="btn btn-primary">Submit</button>
+									<a type="button" href="{{ route('category.index') }}" class="btn btn-danger">Back</a>
 								</div>
 							</div>
 						</div>
@@ -69,15 +72,4 @@
 <script src="../../bower_components/ckeditor/ckeditor.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="../../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<script>
-	$(function () {
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace('editor1')
-    //bootstrap WYSIHTML5 - text editor
-    $('.textarea').wysihtml5()
-})
-</script>
-
-
 @endsection
